@@ -43,7 +43,7 @@ class StarDistData2D(StarDistDataBase):
         else:
             self.b = slice(None),slice(None)
 
-        self.sd_mode = 'opencl' if self.use_gpu else 'cpp'
+        self.sd_mode = 'opencl' if self.use_gpu else 'python'
 
 
     def __getitem__(self, i):
