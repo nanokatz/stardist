@@ -49,8 +49,8 @@ def _py_star_dist(a, n_rays=32, grid=(1,1)):
                 st_rays = np.float32((2*np.pi) / n_rays)
                 for k in range(n_rays):
                     phi = np.float32(k*st_rays)
-                    dy = np.cos(phi)
-                    dx = np.sin(phi)
+                    dy = np.cos(phi)/100
+                    dx = np.sin(phi)/100
                     x, y = np.float32(0), np.float32(0)
                     while True:
                         x += dx
@@ -70,7 +70,7 @@ def _py_star_dist(a, n_rays=32, grid=(1,1)):
     return dst
 
 
-def star_dist(a, n_rays=32, grid=(1,1), mode='cpp'):
+def star_dist(a, n_rays=32, grid=(1,1), mode='python'):
     """'a' assumbed to be a label image with integer values that encode object ids. id 0 denotes background."""
 
     n_rays >= 3 or _raise(ValueError("need 'n_rays' >= 3"))
