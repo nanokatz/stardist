@@ -91,8 +91,8 @@ static PyObject* c_star_dist (PyObject *self, PyObject *args) {
         const float st_rays = (2*M_PI) / n_rays; // step size for ray angles
         for (int k = 0; k < n_rays; k++) {
           const float phi = k*st_rays;
-          const float dy = cos(phi);
-          const float dx = sin(phi);
+          const float dy = cos(phi)/50;
+          const float dx = sin(phi)/50;
           float x = 0, y = 0;
           // move along ray
           while (1) {
