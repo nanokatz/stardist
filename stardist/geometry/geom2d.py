@@ -70,7 +70,7 @@ def _py_star_dist(a, n_rays=32, grid=(1,1)):
     return dst
 
 
-def star_dist(a, n_rays=32, grid=(1,1), mode='python'):
+def star_dist(a, n_rays=32, grid=(1,1), mode='cpp'):
     """'a' assumbed to be a label image with integer values that encode object ids. id 0 denotes background."""
 
     n_rays >= 3 or _raise(ValueError("need 'n_rays' >= 3"))
